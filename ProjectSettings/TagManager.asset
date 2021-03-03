@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dirt
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Wipe
+    uniqueID: 2275548887
+    locked: 0
+  - name: Dirt
+    uniqueID: 834557235
+    locked: 0
+  - name: Effects
+    uniqueID: 983750043
     locked: 0

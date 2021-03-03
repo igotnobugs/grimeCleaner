@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 9100301147788772532}
   - component: {fileID: 9100301147788772535}
   - component: {fileID: -2456078304608939319}
+  - component: {fileID: 4044488938883816475}
+  - component: {fileID: 7366221043828846853}
   m_Layer: 0
   m_Name: SampleDirt
-  m_TagString: Untagged
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9100301147788772534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.91, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.12958, y: 0.12958, z: 0.12958}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,11 +71,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 834557235
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c72468011ec370248afd7184752d9db1, type: 3}
-  m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+  m_Color: {r: 0.122641504, g: 0.12090601, b: 0.12090601, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,3 +97,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa984455378f464e8b273ebc3b22a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctTool: {fileID: 5749322264837810556, guid: e95d6a711416ea545bca38be171f23a7, type: 3}
+  particleCorrect: {fileID: 4114888836392744172, guid: 7f6eb5b9b63ec894d98b0e3e1a4fcd11, type: 3}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!50 &4044488938883816475
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100301147788772534}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &7366221043828846853
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100301147788772534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

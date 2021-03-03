@@ -59,32 +59,25 @@ public class SidePanel : MonoBehaviour
             }
 
         } else {
+
             if (isShown) {
                 ResetPosition();
             }
         }
+
+
     }
 
     private void ShowHidePanel(Touch touch) {
         Vector2 touchDelta = touch.deltaPosition;
         float swipeLength = touchDelta.magnitude;
 
-        Vector2 firstTouch = touch.position;
-        float screenWidth = Screen.width;
-
-        if (direction == SwipeDirection.Left) {
-            if (firstTouch.x / screenWidth > edgeMargin) {
-                return;
-            }
-        } else {
-            if (firstTouch.x / screenWidth < edgeMargin) {
-                return;
-            }
-        }
-
-        if (swipeLength < 3) return;
+        if (!IsWithinMargin(touch)) return;
 
 
+        if (swipeLength < 5) return;
+
+        if (Mathf.Abs(touchDelta.y) > Mathf.Abs(touchDelta.x)) return;
 
         if (touchDelta.x > 0) {
             if (direction == SwipeDirection.Left) {
@@ -105,6 +98,9 @@ public class SidePanel : MonoBehaviour
     }
 
     private void ScrollPanel(Touch touch) {
+
+        if (!IsWithinMargin(touch)) return;
+
         Vector2 touchDelta = touch.deltaPosition;
         elements.anchoredPosition += new Vector2(0, touchDelta.y);
     }
@@ -113,4 +109,21 @@ public class SidePanel : MonoBehaviour
         elements.anchoredPosition = Vector2.Lerp(elements.anchoredPosition, Vector2.zero, 0.2f);
     }
 
+    private bool IsWithinMargin(Touch touch) {
+
+        float screenWidth = Screen.width;
+
+        if (direction == SwipeDirection.Left) {
+            if (touch.position.x / screenWidth < edgeMargin) {
+                return true;
+            }
+        }
+        else {
+            if (touch.position.x / screenWidth > edgeMargin) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

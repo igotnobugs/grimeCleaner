@@ -1,16 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class SpawnDirt : MonoBehaviour 
+public abstract class DirtPattern : MonoBehaviour 
 {
-
-    public Dirt dirtToSpawn;
-
-    public Vector2 spawnLocation;
-
-    public int maxDirt = 20;
-    public int minDirt = 5;
 
     private void Start() {
         
@@ -20,4 +14,6 @@ public class SpawnDirt : MonoBehaviour
     private void Update() {
         
     }
+
+    public abstract int SpawnPatternGetDirt(Dirt dirt, Action onDelete);
 }
